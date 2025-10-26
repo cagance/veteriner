@@ -1,0 +1,27 @@
+package dev.patika.veteriner.dto.request.doctor;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Positive;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class DoctorUpdateRequest {
+    @Positive(message = "ID pozitif bir değer olmalıdır.")
+    private Long id;
+    @NotEmpty(message = "Doktor adı boş olamaz.")
+    private String name;
+    @NotEmpty(message = "Telefon numarası boş olamaz.")
+    private String phone;
+    @Email
+    @NotEmpty(message = "Mail adresi boş olamaz.")
+    private String mail;
+    @NotEmpty(message = "Adres boş olamaz.")
+    private String address;
+    @NotEmpty(message = "Şehir boş olamaz.")
+    private String city;
+}
